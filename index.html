@@ -71,6 +71,17 @@
   .features li{margin:4px 0}
   .note{color:var(--muted);font-size:17px;margin-top:12px}
   .divider{border:none;border-top:1px solid var(--line);margin:56px 0}
+  .specs{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;margin:0 0 22px;padding:14px 16px;border:1px solid var(--line);background:var(--paper)}
+  .specs div{margin:0}.specs dt{font-family:'Josefin Sans',Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--gold-text)}
+  .specs dd{margin:0;font-size:18px}
+  #order{background:var(--cream)}
+  .oform fieldset{border:1px solid var(--line);background:var(--paper);padding:18px 20px 8px;margin:0 0 18px}
+  .oform legend{padding:0 6px;color:var(--gold-text)}
+  .oform .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 18px}
+  .oform label{display:flex;flex-direction:column;gap:4px;font-size:17px;margin-bottom:12px}
+  .oform input,.oform select,.oform textarea{font:inherit;font-size:17px;padding:10px 12px;border:1px solid #CDBFA6;border-radius:2px;background:#fff;color:var(--ink);min-height:44px}
+  .oform input:focus,.oform select:focus,.oform textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .oform button{margin-top:4px}
   #personalize{background:var(--paper);border-top:1px solid var(--line)}
   .narrow{max-width:900px}
   .band-img{border:1px solid var(--line);margin:0 auto 32px}
@@ -113,6 +124,7 @@
       <li><a href="#covenant">Covenant</a></li>
       <li><a href="#dailybread">Daily Bread</a></li>
       <li><a href="#personalize">Personalize</a></li>
+      <li><a href="#order">Order</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -135,8 +147,14 @@
         <p class="sub">2027 Scripture Wall Calendar</p>
         <p>Classic and elegant, with rich color headers that change every month and refined serif lettering. Made for church lobbies, offices and front rooms, and for congregations who want a calendar that feels timeless.</p>
         <ul class="features"><li>A King James verse for every day of the year</li><li>A full-page nature photograph for every month</li><li>Holidays, seasons and daylight saving dates</li><li>Personalized header with your name, schedule and QR code</li><li>28 pages: cover, 12 months, important dates, notes and prayer requests, and a 2028 year at a glance</li></ul>
-        <a class="btn etsy" data-product="covenant" href="#" rel="noopener">Buy on Etsy</a>
-        <p class="note">Printed calendar or printable PDF. Choose your option and personalization on Etsy.</p>
+        <dl class="specs">
+          <div><dt>Page size</dt><dd>12 × 9 in (landscape)</dd></div>
+          <div><dt>Open on the wall</dt><dd>12 × 18 in</dd></div>
+          <div><dt>Pages</dt><dd>28</dd></div>
+          <div><dt>Formats</dt><dd>Printed calendar or printable PDF</dd></div>
+        </dl>
+        <a class="btn order" data-product="covenant" href="#order">Request this calendar</a>
+        <p class="note">Tell us your details and we'll email you a proof and price. No payment needed to ask.</p>
       </div>
     </article>
       <hr class="divider">
@@ -152,8 +170,14 @@
         <p class="sub">2027 Scripture Wall Calendar</p>
         <p>Bright and friendly, with handwritten month names, colorful day labels and rounded, easy-to-read type. Made for kitchens, family rooms and kids' spaces, and for anyone who wants Scripture to feel close and everyday.</p>
         <ul class="features"><li>A King James verse for every day of the year</li><li>A full-page nature photograph for every month</li><li>Holidays, seasons and daylight saving dates</li><li>Personalized header with your name, schedule and QR code</li><li>28 pages: cover, 12 months, important dates, notes and prayer requests, and a 2028 year at a glance</li></ul>
-        <a class="btn etsy" data-product="dailybread" href="#" rel="noopener">Buy on Etsy</a>
-        <p class="note">Printed calendar or printable PDF. Choose your option and personalization on Etsy.</p>
+        <dl class="specs">
+          <div><dt>Page size</dt><dd>12 × 9 in (landscape)</dd></div>
+          <div><dt>Open on the wall</dt><dd>12 × 18 in</dd></div>
+          <div><dt>Pages</dt><dd>28</dd></div>
+          <div><dt>Formats</dt><dd>Printed calendar or printable PDF</dd></div>
+        </dl>
+        <a class="btn order" data-product="dailybread" href="#order">Request this calendar</a>
+        <p class="note">Tell us your details and we'll email you a proof and price. No payment needed to ask.</p>
       </div>
     </article>
     </div>
@@ -192,6 +216,44 @@
     </div>
   </section>
 
+  <section id="order">
+    <div class="wrap narrow">
+      <h2>Request Your Calendar</h2>
+      <p class="kicker caps">We'll reply by email with a proof and price</p>
+      <form id="orderForm" class="oform" novalidate>
+        <fieldset><legend class="caps">Your calendar</legend>
+          <div class="row">
+            <label>Style<select name="style" id="f-style"><option value="Covenant (semi-formal)">The Covenant Calendar (semi-formal)</option><option value="Daily Bread (casual)">The Daily Bread Calendar (casual)</option></select></label>
+            <label>Format<select name="format"><option>Printed calendar</option><option>Printable PDF</option></select></label>
+            <label>Quantity<input type="number" name="quantity" min="1" value="1"></label>
+          </div>
+        </fieldset>
+        <fieldset><legend class="caps">About you</legend>
+          <div class="row">
+            <label>Your name<input name="name" autocomplete="name" required></label>
+            <label>Email<input type="email" name="email" autocomplete="email" required></label>
+            <label>Phone (optional)<input type="tel" name="phone" autocomplete="tel"></label>
+          </div>
+        </fieldset>
+        <fieldset><legend class="caps">Personalization (printed on every month)</legend>
+          <div class="row">
+            <label>Church, ministry or family name<input name="org"></label>
+            <label>Tagline or welcome line<input name="tagline"></label>
+          </div>
+          <div class="row">
+            <label>Address<input name="address" autocomplete="street-address"></label>
+            <label>Phone and website to print<input name="contact"></label>
+          </div>
+          <label>Weekly schedule<textarea name="schedule" rows="3" placeholder="Sunday Worship 10:00 AM, Wednesday Bible Study 7 PM, …"></textarea></label>
+          <label>Anything else? (shipping address, deadline, notes)<textarea name="notes" rows="3"></textarea></label>
+          <p class="note">Have a logo or QR code? Attach it to the email that opens next.</p>
+        </fieldset>
+        <button class="btn" type="submit">Send my request</button>
+        <p class="note" id="formMsg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
       <h2>Say Hello</h2>
@@ -199,7 +261,6 @@
       <p>We'd love to hear from you.</p>
       <div class="contact-links">
         <a class="btn" href="mailto:hello@scriptureondisplay.com">hello@scriptureondisplay.com</a>
-        <a class="btn ghost" href="https://scriptureondisplayco.etsy.com" rel="noopener">Visit our Etsy shop</a>
       </div>
     </div>
   </section>
@@ -211,18 +272,28 @@
 </footer>
 
 <script>
-/* ============================================================
-   EDIT HERE: paste each Etsy listing URL between the quotes.
-   While a link is empty, the button opens the Etsy shop.
-   ============================================================ */
-const ETSY_SHOP = "https://scriptureondisplayco.etsy.com";
-const ETSY_LINKS = {
-  covenant:   "",
-  dailybread: ""
-};
-/* ============================================================ */
-document.querySelectorAll(".etsy").forEach(function(a){
-  a.href = ETSY_LINKS[a.dataset.product] || ETSY_SHOP;
+const EMAIL = "hello@scriptureondisplay.com";
+document.querySelectorAll(".order").forEach(function(a){
+  a.addEventListener("click", function(){
+    var sel = document.getElementById("f-style");
+    sel.selectedIndex = a.dataset.product === "dailybread" ? 1 : 0;
+  });
+});
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = e.target, msg = document.getElementById("formMsg");
+  if (!f.name.value.trim() || !f.email.checkValidity() || !f.email.value.trim()) {
+    msg.textContent = "Please add your name and a valid email address."; (f.name.value.trim() ? f.email : f.name).focus(); return;
+  }
+  var d = new FormData(f), lines = [
+    "Calendar: " + d.get("style"), "Format: " + d.get("format"), "Quantity: " + d.get("quantity"), "",
+    "Name: " + d.get("name"), "Email: " + d.get("email"), "Phone: " + (d.get("phone") || "-"), "",
+    "PERSONALIZATION", "Name to print: " + (d.get("org") || "-"), "Tagline: " + (d.get("tagline") || "-"),
+    "Address: " + (d.get("address") || "-"), "Phone / website: " + (d.get("contact") || "-"),
+    "Weekly schedule: " + (d.get("schedule") || "-"), "", "Notes: " + (d.get("notes") || "-")];
+  var subject = "Calendar request: " + d.get("style") + " · " + d.get("name");
+  window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+  msg.textContent = "Your email app should open with everything filled in. Just press Send. If nothing opens, write to " + EMAIL + ".";
 });
 document.querySelectorAll(".thumbs").forEach(function(group){
   var main = document.getElementById(group.dataset.for);
